@@ -203,20 +203,20 @@
         20. ClienteServer: A subcrição realizada recebe o que foi publicado 
         21. ClienteCliente: Se o produto existir:
         22. ClientCliente: Exibe o nome do produto, quantidade disponível e preço
-        23. ClientCliente: Digite o nome do produto
-        24. ClientCliente: Digite a quantidade desejada (>0)
-        25. ClientCliente: Multiplica a quantidade escolhida pelo preço do produto e salva no objeto ProdutoPedido
-        26. ClientCliente: Você deseja adicionar mais pedidos? 
-        27. ClientCLiente: Sim -> Volta até: Digite o PID... 
-        28. ClientCliente: Não ->  Continua
-        29. ClienteCliente->Grpc: CriarPedido -> Realiza uma requisição por meio do protocolo rpc
-        30. ServerCliente->Grpc: CriarPedido -> Recebe uma requisição por meio do protocolo rpc
-        31. ServerCliente: Salva o pedido na tabela hash (Pedido) do servidor x
-        32. ServerClient->Mosquitto: Se subscreve no tópico server/client/pedido/criar  
-        33. ServerClient->Mosquitto: Publica o cliente criado no tópico server/client/pedido/criar 
-        34. ServerClient: A subcrição realizada recebe o pedido que foi publicado 
-        35. ServerClient: Se o pedido existir na tabela hash do servidor x, nada é feito
-        36. ServerClient: Se o pedido não existir na tabela hash (Pedido) do servidor y, z, w, n ..., o pedido é salvo  no servidor y, z, w, n ... 
+        23. ClientCliente: Digite a quantidade desejada (>0)
+        24. ClientCliente: Multiplica a quantidade escolhida pelo preço do produto e salva no objeto ProdutoPedido
+        25. ClientCliente: Você deseja adicionar mais pedidos? 
+        26. ClientCLiente: Sim -> Volta até: Digite o PID... 
+        27. ClientCliente: Não ->  Continua
+        28. ClienteCliente->Grpc: CriarPedido -> Realiza uma requisição por meio do protocolo rpc
+        29. ServerCliente->Grpc: CriarPedido -> Recebe uma requisição por meio do protocolo rpc
+        30. ServerCliente: Salva o pedido na tabela hash (Pedido) do servidor x
+        31. ServerClient->Mosquitto: Se subscreve no tópico server/client/pedido/criar  
+        32. ServerClient->Mosquitto: Publica o pedido criado no tópico server/client/pedido/criar 
+        33. ServerClient: A subcrição realizada recebe o pedido que foi publicado 
+        34. ServerClient: Se o pedido existir na tabela hash do servidor x, nada é feito
+        35. ServerClient: Se o pedido não existir na tabela hash (Pedido) do servidor y, z, w, n ..., o pedido é salvo  no servidor y, z, w, n ... 
+        36. ClienteCliente: Solicita a modificação de cada produto presente no pedido:
         37. ClienteCliente->Grpc: ModificarProduto -> Realiza uma requisição por meio do protocolo rpc
         38. ServerCliente->Grpc: ModificarProduto -> Recebe uma requisição por meio do protocolo rpc
         39. ClienteServer->Mosquitto: Publica o produto no tópico server/cliente/produto/modificar
@@ -224,7 +224,49 @@
         41. AdminServer-> Armazena a nova quantidade do produto na tabela hash (Produto)
         42. ClientCliente: O pedido criado é exibido
     2. Modificar Pedido
-    3. Buscar Pedido
+        1. ClientCliente: Digite o CID
+        2. ClienteCliente->Grpc: VerificarCliente -> Realiza uma requisição por meio do protocolo rpc
+        3. ServerCliente->Grpc: VerificarCliente -> Recebe uma requisição por meio do protocolo rpc
+        4. ClienteServer->Mosquitto: Publica o CID no tópico server/cliente/cliente/verificar 
+        6. AdminServer-> Mosquitto: Se subscreve no tópico server/cliente/cliente/verificar
+        7. AdminServer-> Verifica se o cliente existe
+        8. AdminServer->Mosquitto: Publica a resposta no tópico server/admin/cliente/verificar 
+        5. ClienteServer->Mosquitto: Se subscreve no tópico server/admin/cliente/verificar
+        6. ClienteServer: A subcrição realizada recebe o que foi publicado 
+        7. ClientCliente->Se o clinte existir:
+        8. ClienteCliente: Digite o OID
+        9. ClienteCliente->Grpc: BuscarPedido -> Realiza uma requisição por meio do protocolo rpc
+        10. ServerCliente->Grpc: BuscarPedido -> Recebe uma requisição por meio do protocolo rpc
+        11. Se o pedido não existir: Exibe a mensagem "Pedido não encontrado. Tente novamente
+        12. Se o pedido existir:
+        12. ClientCliente: Digite o PID
+        13. ClienteCliente->Grpc: BuscarProduto -> Realiza uma requisição por meio do protocolo rpc
+        14. ServerCliente->Grpc: BuscarProduto -> Recebe uma requisição por meio do protocolo rpc
+        15. ClienteServer->Mosquitto: Publica o PID no tópico server/cliente/produto/buscar 
+        16. AdminServer-> Mosquitto: Se subscreve no tópico server/cliente/produto/buscar
+        17. AdminServer-> Busca o produto
+        18. AdminServer->Mosquitto: Publica a resposta no tópico server/admin/produto/buscar
+        19. ClienteServer->Mosquitto: Se subscreve no tópico server/admin/produto/buscar
+        20. ClienteServer: A subcrição realizada recebe o que foi publicado 
+        21. ClienteCliente: Se o produto existir:
+        22. ClientCliente: Exibe o nome do produto, quantidade disponível, preço, quantidade presente no pedido, preço total presente no pedido 
+        24. ClientCliente: Digite a quantidade desejada (Se for 0, o produto é apagado do pedido)
+        25. ClientCliente: Multiplica a quantidade escolhida pelo preço do produto e salva no objeto ProdutoPedido
+        26. ClienteCliente->Grpc: ModificarPedido -> Realiza uma requisição por meio do protocolo rpc
+        27. ServerCliente->Grpc: ModificarPedido -> Recebe uma requisição por meio do protocolo rpc
+        28. ServerCliente: Salva o pedido atualizado na tabela hash (Pedido) do servidor x
+        29. ServerClient->Mosquitto: Se subscreve no tópico server/client/pedido/modificar  
+        30. ServerClient->Mosquitto: Publica o pedido atualizado no tópico server/client/pedido/modificar 
+        31. ServerClient: A subcrição realizada recebe o pedido que foi publicado 
+        32. ServerClient: Se o pedido atualizado existir na tabela hash do servidor x, nada é feito
+        33. ServerClient: Se o pedido atualizado não existir na tabela hash (Pedido) do servidor y, z, w, n ..., o pedido é salvo  no servidor y, z, w, n ... 
+        34. ClienteCliente->Grpc: ModificarProduto -> Realiza uma requisição por meio do protocolo rpc
+        35. ServerCliente->Grpc: ModificarProduto -> Recebe uma requisição por meio do protocolo rpc
+        36. ClienteServer->Mosquitto: Publica o produto no tópico server/cliente/produto/modificar
+        37. AdminServer->Mosquitto: Se subscreve no tópico server/cliente/produto/modificar
+        38. AdminServer-> Armazena a nova quantidade do produto na tabela hash (Produto)
+        39. ClientCliente: O pedido modificado é exibido
+    4. Buscar Pedido
         1. ClientCliente: Digite o CID
         2. ClienteCliente->Grpc: VerificarCliente -> Realiza uma requisição por meio do protocolo rpc
         3. ServerCliente->Grpc: VerificarCliente -> Recebe uma requisição por meio do protocolo rpc
