@@ -338,5 +338,8 @@
  Obs: 
  - Como é possível notar:
     1. Todos os casos de uso foram implementados
-    2. As exçeções foram tratadas e os erros foram retornados
+    2. Há suporte para múltiplos clientes/servidores
+    3. Dois tipos de comunicação foram utilizados RPC (Grpc) e PUB/SUB (Mosquitto)
+    4. A documentação da configuração, execução e do uso foi feita
+    5. As exçeções foram tratadas e os erros foram retornados
 
