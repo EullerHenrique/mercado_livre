@@ -11,6 +11,7 @@
   - [Client](#client)
 - [Tabelas Hash](#tabelas-hash)  
 - [Funcionalidades](#funcionalidades)
+
 ## Tecnologias Utilizadas
 
 - Java
@@ -333,4 +334,6 @@
         20. ServerCliente: Se o pedido não existir na tabela hash (Produto) do servidor y, z, w, n ..., o produto é salvo  no servidor y, z, w, n ... 
         21. ClienteCliente: A mensagem "Pedido apagado" é exibida se ele existir
         22. ClienteCliente: A mensagem "Pedido não encontrado" é exibida se ele não existir    
+    
+ Obs: Como é possível notar, exçeções foram tratadas e erros foram retornados
 
