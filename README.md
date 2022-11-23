@@ -9,7 +9,7 @@
 - [Execução](#execução)
   - [Server](#server)   
   - [Client](#client)
-- [Tabelas Hash](#tabelashash)  
+- [Tabelas Hash](#tabelas-hash)  
 - [Funcionalidades](#funcionalidades)
 ## Tecnologias Utilizadas
 
