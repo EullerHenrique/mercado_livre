@@ -88,8 +88,8 @@
      1. Hashtable<String, String>
      2. <PID, ProdutoJson>
 3. Pedido 
-     1. Hashtable<String, List<Hashtable<String, List<String>>>> 
-     2. <CID<List<OID, List<ProdutoJson>>>>
+     1. Hashtable<String, List<Hashtable<String, List< String >>>> 
+     2. <CID<List<OID, List< ProdutoJson >>>>
 
 ## Funcionalidades
 
