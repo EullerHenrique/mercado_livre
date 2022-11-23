@@ -11,7 +11,7 @@
   - [Client](#client)
 - [Tabelas Hash](#tabelas-hash)  
 - [Funcionalidades](#funcionalidades)
-- [Critérios Atendidos](#criterios-atendidos)
+- [Critérios Atendidos](#critérios-atendidos)
 
 ## Tecnologias Utilizadas
 
