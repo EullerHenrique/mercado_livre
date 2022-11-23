@@ -12,7 +12,7 @@
 - [Tabelas Hash](#tabelas-hash)  
 - [Funcionalidades](#funcionalidades)
 - [Critérios Atendidos](#critérios-atendidos)
-- [Vídeo De Apresentação)(#vídeo-de-apresentação)
+- [Vídeo De Apresentação](#vídeo-de-apresentação)
 
 ## Tecnologias Utilizadas
 
