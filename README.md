@@ -11,6 +11,7 @@
   - [Client](#client)
 - [Tabelas Hash](#tabelas-hash)  
 - [Funcionalidades](#funcionalidades)
+- [Critérios Atendidos](#criterios-atendidos)
 
 ## Tecnologias Utilizadas
 
@@ -335,7 +336,8 @@
         21. ClienteCliente: A mensagem "Pedido apagado" é exibida se ele existir
         22. ClienteCliente: A mensagem "Pedido não encontrado" é exibida se ele não existir    
     
- Obs: 
+ ## Critérios Atendidos
+ 
  - Como é possível notar:
     1. Todos os casos de uso foram implementados
     2. Há suporte para múltiplos clientes/servidores
