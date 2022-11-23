@@ -9,7 +9,7 @@
 - [Execução](#execução)
   - [Server](#server)   
   - [Client](#client)
-  - [Funcionalidades](#funcionalidades)
+- [Funcionalidades](#funcionalidades)
   
 ## Tecnologias Utilizadas
 
@@ -79,7 +79,7 @@
     2. Aperte o botão play localizado ao lado de "public class ClientCliente"
     3. Digite a porta escolhida ao criar o ClienteServer (Ex: 5052)
 
-### Funcionalidades
+## Funcionalidades
 
 1. Admin
     1. Criar Cliente
