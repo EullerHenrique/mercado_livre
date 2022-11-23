@@ -335,5 +335,8 @@
         21. ClienteCliente: A mensagem "Pedido apagado" é exibida se ele existir
         22. ClienteCliente: A mensagem "Pedido não encontrado" é exibida se ele não existir    
     
- Obs: Como é possível notar, exçeções foram tratadas e erros foram retornados
+ Obs: 
+ - Como é possível notar:
+    1. Todos os casos de uso foram implementados
+    2. As exçeções foram tratadas e os erros foram retornados
 
