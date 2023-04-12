@@ -13,6 +13,7 @@
 - [Funcionalidades](#funcionalidades)
 - [Critérios Atendidos](#critérios-atendidos)
 - [Vídeo De Apresentação](#vídeo-de-apresentação)
+- [Nota](#nota)
 
 ## Tecnologias Utilizadas
 
@@ -349,3 +350,14 @@
  ## Vídeo De Apresentação
  - [Vídeo](https://ufubr-my.sharepoint.com/:v:/g/personal/eullerhenrique_ufu_br/EbVlWqEbWVZGnXOt8AGzuWIBFYA3GMIntjIbDDLD2we04Q?e=J8Z6KN)
 
+## Nota
+
+### Projeto Proveniente Da Disciplina
+
+- Sistemas Distribuídos [BSI-UFU]
+  - Professor : Paulo Rodolfo da Silva Leite Coelho
+  - Disciplina cursada entre : 09/2022 - 02/2023
+  - Nota Obtida [Parte 1 do Trabalho]: 18 de 20
+  - Nota Obtida [Disciplina] :  73
+
+                                                
